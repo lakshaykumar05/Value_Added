@@ -1,0 +1,96 @@
+// 1) Hartal
+
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int tt;
+    cin>>tt;
+    
+    
+    while(tt--)
+    {
+        int i,j,n,k,m,l=0,p;
+        
+        cin>>m>>n;
+        vector<int>v(n),hash(m+11,0);
+        
+        for(auto &i:v)
+            cin>>i;
+        
+        for(auto &x:v)
+        {
+            p=x;
+            
+            while(p<=m)
+            {
+                hash[p]=1;
+                p+=x;
+            }
+        }
+                             
+        for(i=1;i<=m;i++)
+         {
+            if(i%7==0 or i%7==6)
+                continue;
+            
+            if(hash[i])
+            {
+                l++;
+                // cout<<i<<" ";
+            }
+         }
+        
+        cout<<l<<"\n";
+        
+    }
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+    return 0;
+}
+
+
+2) Gangster Dawood Ibrahim
+
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+
+    int tt;
+    cin>>tt;
+    
+    while(tt--)
+    {
+        int i,j,n;
+        
+        cin>>n;
+        
+        vector<int>v(n);
+        
+        for(i=0;i<n;i++)
+            cin>>v[i];
+        
+        sort(v.begin(),v.end());
+        
+        if(n&1)
+            cout<<v[n/2];
+        else
+            cout<<v[(n/2)-1];
+        cout<<"\n";
+    }
+    
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
+
