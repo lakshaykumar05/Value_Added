@@ -7,21 +7,6 @@
 #define ll long long
 #define RUNFAST  ios_base::sync_with_stdio(false);    cin.tie(NULL);
 #define vec  vector<ll>
-#define pi vector<pair<ll,ll>>
-#define fi first
-#define se second
-#define pb push_back
-#define sz(v) (ll)v.size()
-#define pt1(a) cout<<a<<" ";
-#define pt2(a,b) cout<<a<<" "<<b<<" ";
-#define pt3(a,b,c) cout<<a<<" "<<b<<" "<<c<<" ";
-#define sorti(v) sort(v.begin(), v.end())
-#define rev(v) reverse(v.begin(), v.end())
-#define issorted(v) is_sorted(v.begin(),v.end())
-#define eb emplace_back
-#define nl cout<<"\n";
-#define mp make_pair
-#define MOD 1000000007 // 998244353
 
 using namespace std;
 using namespace __gnu_pbds;
@@ -72,7 +57,7 @@ void lakshay()
     }
 
     cout<<ans;
-    nl
+    cout<<endl;
 
     for(i=0;i<st;i++)
         cout<<v[i]<<" ";
