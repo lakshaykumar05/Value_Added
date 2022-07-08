@@ -1,0 +1,73 @@
+    #include <bits/stdc++.h>
+
+    #include<ext/pb_ds/assoc_container.hpp>
+    #include<ext/pb_ds/tree_policy.hpp>
+
+
+    #define ll long long
+    #define RUNFAST  ios_base::sync_with_stdio(false);    cin.tie(NULL);
+    #define vec  vector<ll>
+    
+    using namespace std;
+    using namespace __gnu_pbds;
+
+
+    ll primeFactors(ll n)
+    {
+        ll c=2,s=0;
+        while(n>1)
+        {
+            if(n%c==0){
+            ll k=c;
+
+            while(k)
+            {
+                s+=(k%10);
+                k/=10;
+            }
+
+            n/=c;
+            }
+            else c++;
+        }
+        // cout<<n<<" ";
+        return s;
+    }
+
+    void lakshay()
+    {
+        ll i, z = 0, c, d, y = 0, x, l = 0, a, b, j, m, n, p, q, k, maxi = INT_MIN, mini = INT_MAX;
+        bool ok = true;
+        
+        cin>>n;
+
+        p=primeFactors(n);
+
+        // cout<<p;
+    // 
+        while(n)
+        {
+            z+=(n%10);
+            n/=10;
+        }
+
+        if(z==p)
+            cout<<1;
+        else
+            cout<<0;
+
+
+    }
+
+    int main()
+    {   RUNFAST
+        ll num;
+        num = 1;
+        //cin>>num;
+        while (num--)
+        {
+            lakshay();
+            cout << "\n";
+        }
+        return 0;
+    }

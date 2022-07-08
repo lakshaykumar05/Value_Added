@@ -1,0 +1,86 @@
+#include <bits/stdc++.h>
+
+#include<ext/pb_ds/assoc_container.hpp>
+#include<ext/pb_ds/tree_policy.hpp>
+
+
+#define ll long long
+#define RUNFAST  ios_base::sync_with_stdio(false);    cin.tie(NULL);
+#define vec  vector<ll>
+
+using namespace std;
+using namespace __gnu_pbds;
+
+
+void lakshay()
+{
+    ll i, z = 0, c, d, y = 0, x, l = 0, a, b, j, m, n, p, q, k, maxi = INT_MIN, mini = INT_MAX;
+    bool ok = true;
+    
+    cin >> n>>k;
+    vec v(n), v1;
+
+    for(auto &i:v)
+        cin>>i;
+
+    i=0;
+    j=0;
+
+    ll ans=0,st,en;
+
+    if(k==0)
+    {
+        for(auto x:v)
+            cout<<x<<" ";
+        
+        return;
+    }
+
+    while(j<n)
+    {
+        if(v[j]==0)
+            l++;
+
+        while(l>k)
+        {
+            l-=(v[i++]==0);
+        }
+
+        if(j-i+1>ans)
+        {
+            ans=j-i+1;
+            st=i;
+            en=j;
+        }
+
+        j++;
+    }
+
+    cout<<ans;
+    cout<<endl;
+
+    for(i=0;i<st;i++)
+        cout<<v[i]<<" ";
+
+    for(i=st;i<=en;i++)
+        cout<<1<<" ";
+
+    for(i=en+1;i<n;i++)
+        cout<<v[i]<<" ";
+   
+
+
+}
+
+int main()
+{   RUNFAST
+    ll num;
+    num = 1;
+    //cin>>num;
+    while (num--)
+    {
+        lakshay();
+        cout << "\n";
+    }
+    return 0;
+}
